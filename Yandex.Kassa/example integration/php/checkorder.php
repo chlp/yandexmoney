@@ -3,7 +3,7 @@
 	include('config.php');
 
 	$hash = md5($_POST['action'].';'.$_POST['orderSumAmount'].';'.$_POST['orderSumCurrencyPaycash'].';'.$_POST['orderSumBankPaycash'].';'.$configs['shopId'].';'.$_POST['invoiceId'].';'.$_POST['customerNumber'].';'.$configs['ShopPassword']);		
-	if (strtolower($hash) != strtolower($_POST['md5'])){
+	if (strtolower($hash) !== strtolower($_POST['md5'])){
 		$code = 1;
 	}
 	else {
